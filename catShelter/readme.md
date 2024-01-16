@@ -1,1 +1,1 @@
-Backend workshop created on Node.js without using any framework.
+Backend workshop created on Node.js without using framework.
