@@ -1,1 +1,1 @@
- Contains workshops from Js Back-end course in SoftUni academy. 
+ Contains workshops from Js Back-end course @ SoftUni academy. 
