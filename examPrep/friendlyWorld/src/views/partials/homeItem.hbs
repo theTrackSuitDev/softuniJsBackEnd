@@ -1,0 +1,10 @@
+{{#each items}}
+<div>
+    <img src="{{image}}">
+    <p>Name: {{name}}</p>
+    <p>Need of: {{need}}</p>
+    <a class="details-btn" href="/details/{{_id}}">Details</a>
+</div>
+{{else}}
+<p class="no-post">There are no animals in need!</p>
+{{/each}}

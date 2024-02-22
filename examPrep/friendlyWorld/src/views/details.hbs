@@ -1,0 +1,51 @@
+<main class="details">
+    <!-- Details page -->
+    <section id="details">
+        <div id="details-wrapper">
+            <p id="details-title">Name: {{item.name}}</p>
+            <div id="img-wrapper">
+                <img src="{{item.image}}" />
+            </div>
+            <div id="info-wrapper">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                Years: <span id="details-years">{{item.years}}</span>
+                            </p>
+                        </td>
+                        <td>
+                            <p>Kind: <span id="details-kind">{{item.kind}}</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Need of: <span id="details-need">{{item.need}}</span></p>
+                        </td>
+                        <td>
+                            <p>Location: <span id="details-location">{{item.location}}</span></p>
+                        </td>
+                    </tr>
+                </table>
+                <p>Description: <span id="details-description">{{item.description}}</span></p>
+            </div>
+
+            <!--Edit and Delete are only for creator-->
+            {{#if validUser}}
+            <div id="action-buttons">
+                {{#if isOwner}}
+                <a href="/edit/{{item._id}}" id="edit-btn">Edit</a>
+                <a href="/delete/{{item._id}}" id="delete-btn">Delete</a>
+                {{else}}
+                    {{#if userHasDonated}}
+                    <p id="already-donated">You already donated!</p>
+                    {{/if}}
+                    {{#unless userHasDonated}}
+                    <a href="/donate/{{item._id}}" id="donation-btn">Donation</a>
+                    {{/unless}}
+                {{/if}}
+            {{/if}}
+            </div>
+        </div>
+    </section>
+</main>

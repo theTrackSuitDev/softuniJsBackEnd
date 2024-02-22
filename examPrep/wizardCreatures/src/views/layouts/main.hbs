@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wizard Creatures</title>
+
+    <!-- Do not forget to change the path to the css file -->
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div id="box">
+
+        {{#if message}}
+        {{>errorNotification}}
+        {{/if}}
+
+
+        <nav>
+            <!-- Do not forget to change the path to the image -->
+            <img src="/img/logo.png" alt="logo">
+
+            {{#if validUser}}
+            <p style="color:white;">Welcome, {{loggedUser}}!</p>
+            {{else}}
+            <p style="color:white;">Welcome, Guest!</p>
+            {{/if}}
+
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/catalog">All Posts</a></li>
+                <!-- Logged users -->
+                {{#if validUser}}
+                <li><a href="/create">Create Post</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+                <!-- Guest users -->
+                {{else}}
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+            </ul>
+
+        </nav>
+
+        <main>
+
+            {{{body}}}
+
+        </main>
+
+
+        <footer>
+            © JS Back-End Exam 2023
+        </footer>
+    </div>
+
+</body>
+
+</html>
